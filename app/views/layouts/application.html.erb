@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тестовое задание UserForm</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="main">
+    <h1 id="logo">User<em>Form</em><span>Тестовое задание</span></h1>
+ <!-- TODO: Сделать так, чтобы этот элемент был виден только когда человек вошел, 
+            т.е. не на входе, а на второй странице (использ. сессию) -->
+    <div id="user_box">
+      <a href="#">Выйти</a>
+      <a id="name_link" href="">борис ботисанович</a>
+    </div>
+  </header>
+  <section id="primary">
+
+    <%= yield %>
+
+  </section>
+  <footer class="main">
+    <p>Тестовое задание UserForm. <a href="mailto:vasili.chyrvon@gmail.com">Василий Чирвон</a>. Октябрь 2012</p>
+  </footer>
+</body>
+</html>

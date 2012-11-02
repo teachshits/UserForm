@@ -1,0 +1,30 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+section#enter_form {
+
+  form {
+    text-align: center;
+    margin-top: 10%;
+    
+    label {
+      display: block;
+      font: 28px/30px Verdana, sans-serif;
+      margin-bottom: 0.3em;
+    }
+
+    input {
+      font: 24px/24px Verdana, sans-serif;
+    }
+
+    .field input {
+      width: 16em;      
+      padding: 0.3em;
+      border: 1px solid #39f;
+
+    }
+  }
+}
+
+

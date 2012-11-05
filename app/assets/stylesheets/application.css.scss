@@ -36,6 +36,12 @@ header.main {
   background: #39f;
   color: #333;
 
+  a#logo_link {
+    &:hover, &:visited {
+      color: inherit;
+    }
+  }
+
   #logo {
     display: inline-block;
     font: 40px Verdana, sans-serif;

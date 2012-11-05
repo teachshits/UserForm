@@ -1,19 +1,17 @@
 <!-- Форма для входа пользователя -->
 <section id="enter_form">
 
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= form_for @user do |f| %>
-
-    <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2>Вот эти <%= @user.errors.count %> ошибок помешали Вам войти:</h2>
-
-        <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
 
     <div class="field">
       <%= f.label :name, "Для входа просто введите имя" %>

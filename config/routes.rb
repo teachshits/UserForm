@@ -2,8 +2,10 @@ Userform::Application.routes.draw do
 
   resources :users, :except => :index
 
-  get "users/enter"
-  
+  resources :users do
+    get 'logout', on: :member
+  end
+
   get "interests/create"
   get "interests/destroy"
 

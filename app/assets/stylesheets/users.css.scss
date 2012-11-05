@@ -22,7 +22,10 @@ section#enter_form {
       width: 16em;      
       padding: 0.3em;
       border: 1px solid #39f;
+    }
 
+    .field_with_errors input {
+      border-color: red; 
     }
   }
 }

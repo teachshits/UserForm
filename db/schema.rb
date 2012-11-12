@@ -19,11 +19,9 @@ ActiveRecord::Schema.define(:version => 20121019142004) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "interests_users", :force => true do |t|
-    t.integer  "interest_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "interests_users", :id => false, :force => true do |t|
+    t.integer "interest_id"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|

@@ -10,34 +10,22 @@
   <header class="main">
     <%= link_to enter_path, id: "logo_link" do %>
       <h1 id="logo">
-        User<em>Form</em><span>Тестовое задание</span>
+        User<em>Form</em><sup>Тестовое задание</sup>
       </h1>
     <% end %>
     
-    <!-- Если в сессии нет пользователя, этот блок скрыт -->
-    <% if session[:user_id] %>
-      <div id="user_box"> 
-        <%= link_to "Выйти", logout_user_path(@user) %> 
-        <%= link_to @user.name, @user, id: "name_link" %>
+    <% if @logged_user %>
+      <div id="user_box">
+        <%= link_to "Выйти", logout_user_path(@logged_user) %> 
+        <%= link_to @logged_user.name, @logged_user, id: "name_link" %>
       </div>
+    <% else %>
+      <%= link_to "Войти", enter_path, id: "enter_link" %>
     <% end %>
-
   </header>
   <section id="primary">
 
     <%= yield %>
-
-<!-- DELME: Удалить строки ниже -->
-    <p>Session: <%= session %></p>
-    <p>Params: <%= params %></p>
-    Юзеры в базе:
-    <ul>
-      <% User.all.each do |u| %>
-        <li><%= "#{u.id} #{u.name}" %></li>
-      <% end %>
-    </ul>
-    <p><%= User.find_by_name(params[:name]) %></p>
-<!-- DELME: Удалить строки выше -->
 
   </section>
   <footer class="main">

@@ -1,12 +1,23 @@
-<p id="notice"><%= notice %></p>
+<header id="user_head">
+  <h1><%= @user.name %></h1>
+</header>
+<section id="interests">
+  <div id="interests_list">
+    <h2>Интересы:<sup><%= @user.interests.reload.size %></sup></h2>
+    <ul>
+      <% @user.interests.all.each do |i| %>
+        <li>
+          <%= i.title  %>
+          <% if @user == @logged_user %>
+            <%= link_to "Удалить", destroy_interest_path(i), method: "delete" %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="add_interest_form">
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+    <%= render 'users/form' if @user == @logged_user%>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-
-<!-- TODO: А тут разметить как профиль пользователя со списком интересов и формой для добавления нового -->
+  </div>
+</section>

@@ -1,13 +1,12 @@
 Userform::Application.routes.draw do
 
-  resources :users, :except => :index
-
-  resources :users do
+  resources :users, :except => [:index, :new, :edit, :update, :destroy] do
     get 'logout', on: :member
   end
 
-  get "interests/create"
-  get "interests/destroy"
+  post "interests/create", as: "create_interest"  
+  match "interests/:id/destroy" => "interests#destroy", via: 'delete', as: "destroy_interest"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

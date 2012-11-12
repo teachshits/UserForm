@@ -14,6 +14,7 @@
 
 .main {
   position: fixed;
+  z-index: 2;
   width: 100%;
   -webkit-box-shadow: 0px 0px 10px #282b1f;
   -moz-box-shadow: 0px 0px 10px #282b1f;
@@ -36,7 +37,7 @@ header.main {
   background: #39f;
   color: #333;
 
-  a#logo_link {
+  #logo_link {
     &:hover, &:visited {
       color: inherit;
     }
@@ -54,7 +55,7 @@ header.main {
       color: #000;
     }
 
-    span {
+    sup {
     font-style: italic;
     font-size: 14px;
     vertical-align: 16px;
@@ -70,7 +71,7 @@ header.main {
     text-align: right;
     margin: 0.4em 1em;
     
-    a#name_link {
+    #name_link {
       display: block;
       font: 20px/20px Verdana, sans-serif;
       margin: 2em 0 0.6em 30px;
@@ -81,14 +82,20 @@ header.main {
       }
     }
   }
+
+  #enter_link {
+    float: right;
+    margin: 0.4em 1em;
+  }
 }
 
 section#primary {
-  position: fixed;
+  position: absolute;
+  z-index: 1;
   top: 110px;
-  bottom: 40px;
   left: 10%;
   right: 10%;
+  padding-bottom: 40px;
 }
 
 footer.main {

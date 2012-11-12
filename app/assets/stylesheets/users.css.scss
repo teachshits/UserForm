@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-section#enter_form {
-
+#enter_form {
   form {
     text-align: center;
     margin-top: 10%;
@@ -14,7 +13,7 @@ section#enter_form {
       margin-bottom: 0.3em;
     }
 
-    input {
+    input{
       font: 24px/24px Verdana, sans-serif;
     }
 
@@ -30,4 +29,68 @@ section#enter_form {
   }
 }
 
+#user_head {
+  h1 {
+     font: 32px/32px Verdana, sans-serif;
+     margin: 0.5em 0 0.3em 0;
+  }
+}
+
+#interests{
+  a {
+    color: #39f;
+    font-size: 70%;
+    vertical-align: 1px;
+
+    &:hover {
+      color: #666;
+    }
+  }
+  #interests_list {
+    h2 { 
+      font: 22px/22px Verdana, sans-serif;
+      margin: 0;
+
+      sup { 
+        color: #39f;
+        vertical-align: 14px;
+        margin-left: -10px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 20px;
+
+      li {
+        margin-left: -20px;
+        font-size: 120%;
+        &:before {
+          content: "• ";
+          color: #39f;
+        }
+      }
+    }
+  }
+
+  #add_interest_form {
+    .field, .actions {
+      display: inline-block;
+    }
+
+    input{
+      font-size: 120%;
+    }
+
+    .field input {
+      padding: 0.3em;
+      width: 13em;      
+      border: 1px solid #39f;
+    }
+
+    .field_with_errors input {
+      border-color: red; 
+    }
+  }
+}
 

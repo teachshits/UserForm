@@ -35,7 +35,8 @@ div {
   text-align: left;
   color: red;
 
-  ul li {
-    list-style: square; 
+  ul, li {
+    list-style: none; 
+    padding: 0;
   }
 }

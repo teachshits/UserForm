@@ -1,5 +1,4 @@
-<!-- Форма для входа пользователя -->
-<section id="enter_form">
+<div id="enter_form">
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -12,14 +11,12 @@
   <% end %>
 
   <%= form_for @user do |f| %>
-
     <div class="field">
       <%= f.label :name, "Для входа просто введите имя" %>
       <%= f.text_field :name, placeholder: "вот тут..." %>
-    </div>
-    
+    </div>    
     <div class="actions">
       <%= f.submit "Войти" %>      
     </div>    
   <% end %>
-</section>
+</div>
